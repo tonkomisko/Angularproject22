@@ -1,0 +1,32 @@
+
+
+<!-- <app-logout-btn></app-logout-btn> -->
+ 
+ <div  class = "home-page2">
+    <h3 class = "home"> This is the PROJECT 2's HOME sweet HOME page </h3>  
+    <p class = "home">
+    
+      <div class="tab-content">
+        <!-- <form action=""> -->
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" id="loginName" class="form-control" [(ngModel)]="loginName" autocomplete="off"/>
+            <label class="form-label" for="loginName">Username</label>
+          </div>
+      
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <input type="password" id="loginPassword" class="form-control" [(ngModel)]="loginPassword" autocomplete="off">
+            <label class="form-label" for="loginPassword">Password</label>
+          </div>
+        <!-- </form> -->
+      </div>
+    
+
+      
+      <app-login-btn [itemLoginName]="loginName" [itemLoginPassword]="loginPassword" ></app-login-btn>
+
+   
+   
+  </div>
+

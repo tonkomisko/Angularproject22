@@ -1,0 +1,48 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+
+.table1, .table2, .table3, .table4,
+.home-page2 {
+  margin: 0 auto;
+  /* width: 50%; */
+  padding: 2rem;
+}
+
+h3 {
+    text-align: center;
+    padding: 2rem;
+ 
+}
+
+div {
+  padding-bottom: 1rem;
+}
+
+div.table1 {
+  border-radius: 0.5rem;
+}
+
+.table-borderless {
+  /* border-radius: 1rem; */
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.table2.table-striped.table-hover.table-borderless>tbody>tr:nth-child(even)>td, 
+.table2.table-striped.table-hover.table-borderless>tbody>tr:nth-child(even)>th {
+background-color: rgb(78, 180, 78);
+}
+
+/* div.table2.table-striped>tbody>tr:nth-child(odd)>td {
+    background-color: green;
+} */
+
+/* .table3>tbody>tr:nth-child(odd) */
+/* .table-striped tbody tr:nth-of-type(2n+1), */
+/* .table4.table.table-striped.table-borderless>tbody>tr:nth-child(odd)>td, */
+.odd {
+    background-color: rgb(1, 93, 121);
+    color: white;
+}
+.even {
+    background-color: yellow;
+}

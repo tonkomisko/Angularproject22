@@ -1,0 +1,13 @@
+.flex-box {
+    display: flex;
+    align-items: flex-end;
+    justify-content:flex-end;
+}
+button.logout_btn {
+
+    /* display: flex; */
+    /* flex-direction: row-reverse; */
+   
+    margin: 2rem;
+
+}

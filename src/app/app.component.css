@@ -1,0 +1,23 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+.table1, .home-page2 {
+    margin: 0 auto;
+    width: 50%;
+    padding: 2rem;
+}
+
+div {
+    padding-bottom: 1rem;
+}
+
+
+div.table1 {
+    border-radius: 0.5rem;
+}
+
+
+.table-borderless {
+    /* border-radius: 1rem; */
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+

@@ -1,0 +1,182 @@
+
+
+<div class="container">
+  <div class="row justify-content-center"> 
+    <div class=" col-sm-6">
+        <h3>This is the RECORDS overview page</h3>  
+        <table class="table1 table table-striped table-dark table-hover table-borderless">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Country</th>
+              </tr>
+            </thead>  
+            <tbody>
+              <tr *ngFor="let row of recordsData; index as i">
+                <td>
+                  {{i + 1}}
+                </td>
+                <td>
+                  {{ row.name }}
+                </td>
+                <td>
+                  {{ row.age }}
+                </td>
+                <td>
+                  {{ row.gender }}
+                </td>
+                <td>
+                  {{ row.country }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        
+
+        <!-- <div class="table2"> -->
+          <h3>This is the BootStrap4 table</h3>
+          <table class="table2 table table-striped table-hover table-borderless">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Country</th>
+              </tr>
+            </thead>  
+            <tbody>
+              <tr *ngFor="let row of recordsData; index as i">
+                <td>
+                  {{i + 1}}
+                </td>
+                <td>
+                  {{ row.name }}
+                </td>
+                <td>
+                  {{ row.age }}
+                </td>
+                <td>
+                  {{ row.gender }}
+                </td>
+                <td>
+                  {{ row.country }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        <!-- </div> -->
+  
+  
+        <h3>This is the NgClass table</h3>
+  
+        <!-- <div class="table3"> -->
+          <table class="table3 table table-striped table-borderless">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Country</th>
+              </tr>
+            </thead>  
+            <tbody>
+              <tr
+                          
+              *ngFor="let row of recordsData; let index = index"
+              [ngClass] = "{odd: index % 2 !== 0 }"
+              >
+                <td>
+                  {{index + 1}}
+                </td>
+                <td>
+                  {{ row.name }}
+                </td>
+                <td>
+                  {{ row.age }}
+                </td>
+                <td>
+                  {{ row.gender }}
+                </td>
+                <td>
+                  {{ row.country }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+
+          <h3>This is the NgIf table</h3>
+  
+        <!-- <div class="table3"> -->
+          <table class="table4 table table-striped table-borderless">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Country</th>
+              </tr>
+            </thead>  
+            <tbody>
+              <ng-container  *ngFor="let row of recordsData; let index = index">
+                <tr *ngIf="index % 2 ===0;" class="even">
+                  <!-- {{console.log('index + 1')}} -->
+                    <td class=" even">
+                      {{index + 1}}
+                    </td>
+                    <td class=" even">
+                      {{ row.name }}
+                    </td>
+                    <td class=" even">
+                      {{ row.age }}
+                    </td>
+                    <td class=" even">
+                      {{ row.gender }}
+                    </td>
+                    <td class=" even">
+                      {{ row.country }}
+                    </td>
+                </tr>
+
+                <tr *ngIf="index % 2 !=0;" class="odd">
+                  <td class=" odd">
+                    {{index + 1}}
+                  </td>
+                  <td class=" odd">
+                    {{ row.name }}
+                  </td>
+                  <td class=" odd">
+                    {{ row.age }}
+                  </td>
+                  <td class=" odd">
+                    {{ row.gender }}
+                  </td>
+                  <td class=" odd">
+                    {{ row.country }}
+                  </td>
+              </tr>
+
+              </ng-container>
+
+                           
+            </tbody>
+          </table>
+
+    </div>
+
+
+
+  </div>
+
+     
+
+     
+  </div> 
+<!-- </div> -->

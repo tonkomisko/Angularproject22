@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Blog site</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="/blog.css" rel="stylesheet"> -->
+    </head>
+    <body>
+        <div class="blog-content">
+            
+                <h1>This is the BLOG</h1>
+            
+                <h3> 
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                Delectus, nam.
+                </h3>
+
+                <app-logout-btn></app-logout-btn>
+
+                <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad facere reiciendis totam magnam a. Cumque ipsum accusamus
+                deleniti. Dicta, voluptates quos eum sapiente dolorem quas saepe cumque incidunt beatae dignissimos enim impedit quis,
+                consectetur accusantium similique laboriosam quo quibusdam. Autem fuga veritatis harum omnis cum voluptate velit
+                asperiores repudiandae excepturi magnam officia mollitia quis, corrupti expedita voluptatem, sunt odio consectetur
+                facilis error placeat. Eligendi laborum qui culpa commodi maxime est? Facilis odio quod vel aliquam voluptates beatae,
+                dolorum dolorem nihil iste voluptate totam velit unde veritatis similique quam cum earum explicabo facere nam laudantium
+                harum possimus consectetur amet? Perspiciatis, ad.
+                </p>
+                <br>
+                    <br>
+                
+                    <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad facere reiciendis totam magnam a. Cumque ipsum accusamus
+                deleniti. Dicta, voluptates quos eum sapiente dolorem quas saepe cumque incidunt beatae dignissimos enim impedit quis,
+                consectetur accusantium similique laboriosam quo quibusdam. Autem fuga veritatis harum omnis cum voluptate velit
+                asperiores repudiandae excepturi magnam officia mollitia quis, corrupti expedita voluptatem, sunt odio consectetur
+                facilis error placeat. Eligendi laborum qui culpa commodi maxime est? Facilis odio quod vel aliquam voluptates beatae,
+                dolorum dolorem nihil iste voluptate totam velit unde veritatis similique quam cum earum explicabo facere nam laudantium
+                harum possimus consectetur amet? Perspiciatis, ad.
+                </p>
+                <br>
+                <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad facere reiciendis totam magnam a. Cumque ipsum accusamus
+                deleniti. Dicta, voluptates quos eum sapiente dolorem quas saepe cumque incidunt beatae dignissimos enim impedit quis,
+                consectetur accusantium similique laboriosam quo quibusdam. Autem fuga veritatis harum omnis cum voluptate velit
+                asperiores repudiandae excepturi magnam officia mollitia quis, corrupti expedita voluptatem, sunt odio consectetur
+                facilis error placeat. Eligendi laborum qui culpa commodi maxime est? Facilis odio quod vel aliquam voluptates beatae,
+                dolorum dolorem nihil iste voluptate totam velit unde veritatis similique quam cum earum explicabo facere nam laudantium
+                harum possimus consectetur amet? Perspiciatis, ad.
+                </p> 
+                <p>
+
+                Please leave a comment below
+            </p>
+        </div>
+
+
+        <div class="comment-form">
+
+
+           
+                <h2>Enter your name and comment</h2>
+                <form [formGroup]="addCommentForm">
+                 
+                    <input matInput placeholder="Comment content" formControlName="content" />
+                    
+                  <br />
+                  
+                    <input matInput placeholder="Author" formControlName="author" />
+                 
+                  <br />
+                  <button [disabled]="!addCommentForm.valid" mat-raised-button type="submit" (click)="postComment()">
+                    Add Comment
+                  </button>
+                </form>
+     
+
+        </div>
+
+        <div class="comments">
+            
+            <button type="button" class="btn btn-dark" (click)= "getComments()">Get all Comments</button>
+            
+            <ul class="comments_list">
+                <li *ngFor="let comment of newComments; index as i">
+                    <header>Comment number {{comment.id}} added by <strong>{{comment.author}} </strong>On: {{comment.dateTime}} </header>  
+                <article *ngIf = "comment.status === 'read'">
+                      {{comment.content}}
+                </article>
+
+                <input *ngIf = "comment.status === 'edit'" type="text" [(ngModel)] = "comment.content" (ngModelChange) = "updateComment($event)"> 
+                          <button type="button" class="btn btn-danger" (click)= "deleteComment(comment.id)">Delete comment</button> 
+                          <button type="button" class="btn btn-primary" (click)="updateComment(comment)">Update comment</button> 
+                          <button type="button" class="btn btn-dark" (click)= "switchStatus(comment)">Switch status</button>
+                         
+                </li>
+            </ul>
+        </div>
+        
+    </body>
+</html>

@@ -5,13 +5,14 @@ import {AboutPageComponent} from './about-page/about-page.component'
 import {ContactComponent} from './contact/contact.component'
 import {RecordsComponent} from './records/records.component'
 import { BlogComponent } from './blog/blog.component';
+import { AuthGuard } from './services/auth.guard';
 // import { AuthGuard } from './services/auth.guard';
 // import { LogoutBtnComponent } from './logout-btn/logout-btn.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'aboutus', component: AboutPageComponent },
-  { path: 'contact', component: ContactComponent },
+  { path: 'contact', component: ContactComponent, canActivate: [AuthGuard] },
   { path: 'records', component: RecordsComponent },
   { path: 'blog', component: BlogComponent,  },
   { path: 'jozko', component: BlogComponent },

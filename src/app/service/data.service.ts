@@ -9,12 +9,13 @@ export class DataService {
     private subject = new Subject<any>();
  
     sendData(message: any) {
+        localStorage.setItem("loggedin", JSON.stringify(message));
     debugger;    this.subject.next(message);
     }
  
     
  
-    getData(): Observable<any> {
+    getData(): Observable<boolean> {
         debugger;
         return this.subject.asObservable();
     }

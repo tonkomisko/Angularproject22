@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -13,6 +13,7 @@ import { DatePipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { LogoutBtnComponent } from './logout-btn/logout-btn.component';
 import { LoginBtnComponent } from './login-btn/login-btn.component';
+import { AuthGuard } from './services/auth.guard';
 // import { Comment} from './blog/blog.component';
 // import { RecordsTable } from './records/records.component';
 @NgModule({
@@ -37,7 +38,7 @@ import { LoginBtnComponent } from './login-btn/login-btn.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

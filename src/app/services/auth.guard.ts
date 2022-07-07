@@ -1,45 +1,50 @@
-// import { Injectable } from '@angular/core';
-// import {
-//   ActivatedRouteSnapshot,
-//   CanActivate,
-//   Router,
-//   RouterStateSnapshot,
-//   UrlTree,
-// } from '@angular/router';
-// import { catchError, map, Observable, of } from 'rxjs';
-// import { LoginBtnComponent } from '../login-btn/login-btn.component';
-// import { DataService } from '../service/data.service';
+import { Injectable } from '@angular/core';
+import {
+  ActivatedRouteSnapshot,
+  CanActivate,
+  Router,
+  RouterStateSnapshot,
+  UrlTree,
+} from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { catchError, filter, first, map, mergeMap } from 'rxjs/operators';
+import { LoginBtnComponent } from '../login-btn/login-btn.component';
+import { DataService } from '../service/data.service';
 
-// @Injectable()
-// export class AuthGuard implements CanActivate {
-//   constructor(private ds: DataService, private router: Router) {}
+@Injectable()
+export class AuthGuard implements CanActivate {
+  constructor(private ds: DataService, private router: Router) {}
 
-//   canActivate(
+  canActivate(
 //     route: ActivatedRouteSnapshot,
 //     state: RouterStateSnapshot
-//   ): boolean | Promise<boolean> | Observable<boolean> {
-//     // return this.ds
-//     //   .getData()
-//     //   .subscribe(x => {
-//     //     return observer.next(true);
+  ): boolean | Promise<boolean> | Observable<boolean> {
+      debugger;
+      const isL = localStorage.getItem("loggedin");
+      
+      if (isL === 'true') {
+        return true;
+      } 
+      return false;
+      
 
-//     //   })
-
-      // .pipe(
-      //   map((e) => {
-      //     debugger;
-      //     console.log('can activate', e);
-      //     if (e) {
-      //       return true;
-      //     } else {
-      //       return false;
-      //     }
-      //   }),
-      //   catchError((err) => {
-      //     debugger;
-      //     // this.router.navigate(['/login']);
-      //     return of(false);
-      //   })
-      // );
-//   }
-// }
+    
+    // this.ds.getData().pipe(
+    //   first(),
+    //   map(res => {
+    //     debugger;
+    //     console.log('can activate', res);
+    //     if (res) {
+    //       return true;
+    //     } else {
+    //       return false;
+    //     }
+    //   }),
+      // catchError((err) => {
+      //       debugger;
+      //       // this.router.navigate(['/login']);
+      //       return of(false);
+      //     })
+    // );
+  }
+}

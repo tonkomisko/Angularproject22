@@ -16,6 +16,7 @@ export class AppComponent {
   constructor(private ds: DataService, private router: Router){
     this.ds.getData().subscribe(x => { 
       debugger;
+      console.log('app ',x);
       this.isLoggedIn_parent = x; 
       
       if (this.isLoggedIn_parent)

@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  ROOT_URL: 'https://626fc2eff7d739495bdbd882.mockapi.io/api/comments/blog_comments'
+  ROOT_URL: 'https://626fc2eff7d739495bdbd882.mockapi.io/api/comments/blog_comments',
+
+  serverJson1Api: 'http://localhost:3000/json'
 };
 
 /*

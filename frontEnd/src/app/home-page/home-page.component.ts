@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Output, EventEmitter } from '@angular/core';
 import { DataService } from '../service/data.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home-page',
@@ -38,7 +39,17 @@ export class HomePageComponent implements OnInit {
   constructor(private http:HttpClient, private ds: DataService ) { }
 
   ngOnInit(): void {
+    this.getServerJson1Api().subscribe((data: any) => {
+      console.log(data);
+    });
   }
+
+  getServerJson1Api(){
+    debugger;
+    const url = environment.serverJson1Api;
+    return this.http.get<any>(url);
+  }
+
   status:boolean = true;
 
   showHideHome(){

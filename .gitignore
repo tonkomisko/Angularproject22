@@ -10,6 +10,7 @@ frontEnd/bazel-out
 
 # Node
 frontEnd/node_modules
+backEnd/node_modules
 npm-debug.log
 yarn-error.log
 
